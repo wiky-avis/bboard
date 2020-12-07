@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8”>
-        <meta name='viewport' content='width=device-width, initial-scale=l, shrink-to-fit=no'>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %} Главная {% endblock %} - Доска объявлений </title>
         {% bootstrap_css %}
         <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}" > 
@@ -12,34 +12,38 @@
         </head>
         <body class="container-fluid">
             <header class="mb-4">
-                <hl class="display-l 1ех1-сеп1ег">0бъявления</hl>
+                <h1 class="display-1 text-center ">Объявления</h1>
             </header>
             <div class="row">
             <ul class="col nav justify-content-end border">
-            <li class="nav-item"><a class="nav-link" href="#">PerncTpauHH</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Регистрация</a></li>
+            {% if user.is_authenticated %}
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="Га1зе">Профиль</а> 
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >Профиль</а> 
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Moи объявления</а>
                     <a class="dropdown-item" href="#">Изменить личные данные</а>
-                    <a с1ass="dropdown-item" ЬгеГ="#">Изменить пароль</a>
+                    <a сlass="dropdown-item" href="#">Изменить пароль</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" ЬгеГ="#">Выйти</а>
+                    <a class="dropdown-item" href="#">Выйти</а>
                 </div>
             </li>
-            <li class="nav-item"><a class=”nav-link" href="#">Bxoд</a></li>
+            {% else %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'main:login' %}">Bxoд</a></li>
+            {% endif %}
             </ul>
-                </div>
+            </div>
                 <div class='row'>
-                <nav class='col-md-auto nav flex-column border'>
-                <a class='nav-link root' href="{% url ’main:index' %}">Главная</а>
+                <nav class="col-md-auto nav flex-column border">
+                <a class="nav-link root" href="{% url 'main:index' %}">Главная</а>
                 <span class="nav-link root font-weight-bold">Heдвижимость </span>
                 <a class="nav-link" href="#">Жилье</a>
-                <a class="nav-link" Ьге1="#">Склады</а>
-                <a class="nav-link" Нге1="#">Гаражи</а>
+                <a class="nav-link" href="#">Склады</а>
+                <a class="nav-link" href="#">Гаражи</а>
                 <span class="nav-link root font-weight-bold" href="#">Транспорт</span>
                 <a class="nav-link" href="#">Легковой</a>
                 <a class="nav-link" href="#">Грузовой</a>
+                <a class="nav-link root" href="{% url 'main:other' page='about' %}"> О сайте</а>
                 </nav>
                 <section class="col border py-2">
                 {% bootstrap_messages %}
