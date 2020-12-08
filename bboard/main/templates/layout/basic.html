@@ -9,14 +9,14 @@
         {% bootstrap_css %}
         <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}" > 
         {% bootstrap_javascript jquery='slim' %} 
-        </head>
+    </head>
         <body class="container-fluid">
             <header class="mb-4">
                 <h1 class="display-1 text-center ">Объявления</h1>
             </header>
             <div class="row">
             <ul class="col nav justify-content-end border">
-            <li class="nav-item"><a class="nav-link" href="#">Регистрация</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'main:register' %}">Регистрация</a></li>
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >Профиль</а> 
@@ -24,6 +24,7 @@
                     <a class="dropdown-item" href="{% url 'main:profile' %}">Moи объявления</а>
                     <a class="dropdown-item" href="{% url 'main:profile_change' %}">Изменить личные данные</а>
                     <a сlass="dropdown-item" href="{% url 'main:password_change' %}">Изменить пароль</a>
+                    <a сlass="dropdown-item" href="{% url 'main:profile_delete' %}">Удалить</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{% url 'main:logout' %}">Выйти</а>
                 </div>
