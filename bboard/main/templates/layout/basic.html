@@ -12,7 +12,7 @@
     </head>
         <body class="container-fluid">
             <header class="mb-4">
-                <h1 class="display-1 text-center ">Объявления</h1>
+                <h1 class="display-1 text-center">Объявления</h1>
             </header>
             <div class="row">
             <ul class="col nav justify-content-end border">
@@ -24,9 +24,10 @@
                     <a class="dropdown-item" href="{% url 'main:profile' %}">Moи объявления</а>
                     <a class="dropdown-item" href="{% url 'main:profile_change' %}">Изменить личные данные</а>
                     <a сlass="dropdown-item" href="{% url 'main:password_change' %}">Изменить пароль</a>
-                    <a сlass="dropdown-item" href="{% url 'main:profile_delete' %}">Удалить</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{% url 'main:logout' %}">Выйти</а>
+                    <div class="dropdown-divider"></div>
+                    <a сlass="dropdown-item" href="{% url 'main:profile_delete' %}">Удалить</a>
                 </div>
             </li>
             {% else %}
@@ -37,7 +38,7 @@
                 <div class='row'>
                 <nav class="col-md-auto nav flex-column border">
                 <a class="nav-link root" href="{% url 'main:index' %}">Главная</а>
-                <span class="nav-link root font-weight-bold">Heдвижимость </span>
+                <span class="nav-link root font-weight-bold">Heдвижимость</span>
                 <a class="nav-link" href="#">Жилье</a>
                 <a class="nav-link" href="#">Склады</а>
                 <a class="nav-link" href="#">Гаражи</а>
